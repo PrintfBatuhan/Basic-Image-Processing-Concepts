@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1612268789 source:c:\users\batuhan\desktop\dip\lessons\basic image processing concepts\open_and_copy\main.c
+	<stdio.h>
+	<stdlib.h>
+
