@@ -1,26 +1,26 @@
 # Image-Processing
 ### Basic Image Processing Concepts and Terminologies
-- Opening and Copying an Image
+- Code-1:Opening and Copying an Image
 
-- Image Reader and Image Writer Function
+- Code-2:Image Reader and Image Writer Function
 
-- Creating the Image Processing Library
+- Code-3:Creating the Image Processing Library
 
 ### Arithmetic Operations
-- Image Brigthness
+- Code-4:Image Brigthness
 ### Histogram and Equalization
-- Computing the Histogram of an Image
+- Code-5:Computing the Histogram of an Image
 
-- Equalizing an Image Histogram
+- Code-6:Equalizing an Image Histogram
 ### Geometric Operations
-- Rotating Images
+- Code-7:Rotating Images
 
 ### Gray Level Transformation
-- Negative Transformation
+- Code-8:Negative Transformation
 
 ### Image Enhancement Techniques
-- Blurring an Image with a Filter Kernel
+- Code-9:Blurring an Image with a Filter Kernel
 
-- Creating a Sepia Filter
+- Code-10:Creating a Sepia Filter
 
 
