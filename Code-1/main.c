@@ -3,7 +3,7 @@
 
 int main()
 {
-    FILE *Input = fopen("images/cameraman.bmp","rb");         //Read
+    FILE *Input = fopen("images/cameraman.bmp","rb");         //Read 
     FILE *Output = fopen("images/cameraman_copy.bmp","wb");   //Write
     //FILE *variable = fopen("file name/image name","rb/wb");
 
@@ -24,7 +24,7 @@ int main()
     int width =*(int*)&header[18];   //Read the width from the image header array  and this indicates the offset 18 from bitmap header table
     int height =*(int*)&header[22];  // offset 22 from bitmap header table
     int bitDepth=*(int*)&header[28]; // offset 28 from bitmap header table
-
+	//The (int *) part casts the variable number to a pointer to an int, then the * in front dereferences it to an int.
     if(bitDepth<=8)                  //If color table exists, we're going to read it here
     {
         fread(colorTable,sizeof(unsigned char),1024,Input);
