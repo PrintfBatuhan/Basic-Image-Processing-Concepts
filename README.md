@@ -7,7 +7,7 @@
 - Code-3:Creating the Image Processing Library
 
 ### Arithmetic Operations
-- Code-4:Image Brigthness
+- Code-4:Image Brigthness and Darkness
 ### Histogram and Equalization
 - Code-5:Computing the Histogram of an Image
 
