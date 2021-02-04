@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1612331204 source:c:\users\batuhan\desktop\code-3\img_processing_lib\src\img_processing_lib.cpp
+	"Img_Processing_Lib.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
+1612331204 c:\users\batuhan\desktop\code-3\img_processing_lib\include\img_processing_lib.h
+
+1612331245 source:c:\users\batuhan\desktop\code-3\img_processing_lib\main.cpp
+	<iostream>
+	"Img_Processing_Lib.h"
+
+1612331245 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-3\img_processing_lib\main.cpp
+	<iostream>
+	"Img_Processing_Lib.h"
+
+1612335818 c:\users\batuhan\desktop\dip\lessons\image processing\code-3\img_processing_lib\include\img_processing_lib.h
+
+1612361255 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-4\img_processing_lib\main.cpp
+	<iostream>
+	"Img_Processing_Lib.h"
+
+1612360190 c:\users\batuhan\desktop\dip\lessons\image processing\code-4\img_processing_lib\include\img_processing_lib.h
+
+1612360190 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-4\img_processing_lib\src\img_processing_lib.cpp
+	"Img_Processing_Lib.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
+1612406610 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\main.cpp
+	<iostream>
+	"Img_Processing_Lib.h"
+
+1612406097 c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\include\img_processing_lib.h
+
+1612406610 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\src\img_processing_lib.cpp
+	"Img_Processing_Lib.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
