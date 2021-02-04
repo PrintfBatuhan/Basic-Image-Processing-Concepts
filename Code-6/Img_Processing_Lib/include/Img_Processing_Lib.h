@@ -27,8 +27,8 @@ class Img_Processing_Lib
         void copyImgData(unsigned char *_srcBuffer, unsigned char *_destBuffer, int bufferSize);
         void brightnessUP(unsigned char *_inputImageData,unsigned char *_outImgData, int imgSize, int brightness);
         void brightnessDOWN(unsigned char *_inputImageData,unsigned char *_outImgData, int imgSize, int darkness);
-        void Histogram(unsigned char *_imgData, int imgRows, int imgCols,float hist[],const char *histFile);
-
+        void Histogram(unsigned char * _imgData, int imgRows, int imgCols, float hist[], const char *histFile);
+        void EqualizeHistogram(unsigned char *_inptImgData, unsigned char *_outputImgData, int imgRows, int imgCols);
 
         virtual ~Img_Processing_Lib();
 

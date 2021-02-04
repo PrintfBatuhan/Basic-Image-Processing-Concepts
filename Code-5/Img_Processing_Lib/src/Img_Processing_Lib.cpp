@@ -14,8 +14,8 @@ Img_Processing_Lib::Img_Processing_Lib( //definition of required arguments
                                         int * _bitDepth, //to store image bitdepth
                                         unsigned char * _header, //to store image header
                                         unsigned char * _colorTable,
-                                        unsigned char * _inBuffer,
-                                        unsigned char * _outBuffer
+                                        unsigned char * _inBuffer, // memory used to store image data
+                                        unsigned char * _outBuffer // memory used to store image data
                                        )
 {
     inImgName  = _inImgName;
@@ -118,14 +118,15 @@ void Img_Processing_Lib::brightnessDOWN(unsigned char *_inputImageData,unsigned 
 }
 
 /***************************************Histogram Function****************************************/
-void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int imgCols, float hist[])
+void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int imgCols, float hist[], const char *histFile)
 {                                             //(imgInBuffer, imgHeight, imgWidth,imgHist)
     FILE *fptr;
-    fptr =fopen("image_hist.txt","w"); //open output as txt file. Write Pixels values on text file.
+    fptr =fopen(histFile,"w"); //open output as txt file. Write Pixels values on text file.
 
     int x,y,i,j;                 //some local variables
     long int ihist[255],sum;   //temporary histogram
-    for(i =0;i<=255;i++)      // just for initializing ihist index equal zero
+
+    for(i =0;i<=255;i++)      // initializing all intensity values to zero
     {
         ihist[i] =0;
     }
@@ -135,8 +136,8 @@ void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int im
     {
         for(x=0;x<imgCols;x++)
         {
-            j = *(_imgData+x+y*imgCols);
-            ihist[j] = ihist[j] +1;
+            j = *(_imgData+x+y*imgCols); // increment each value that we encounter in the array (pixels values)
+            ihist[j] = ihist[j] +1;      //each intensity goes to the appropriate histogram pane
             sum = sum+1;
         }
 
@@ -145,7 +146,7 @@ void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int im
     for(i=0;i<255;i++)
         hist[i] = (float)ihist[i]/(float)sum;
 
-    for(int i=0;i<255;i++)
+    for(int i=0;i<255;i++) //Scale the histogram
     {
         fprintf(fptr,"\n%f",hist[i]);
     }

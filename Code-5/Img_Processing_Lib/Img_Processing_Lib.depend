@@ -29,13 +29,13 @@
 	<stdlib.h>
 	<iostream>
 
-1612406610 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\main.cpp
+1612425707 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\main.cpp
 	<iostream>
 	"Img_Processing_Lib.h"
 
-1612406097 c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\include\img_processing_lib.h
+1612418627 c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\include\img_processing_lib.h
 
-1612406610 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\src\img_processing_lib.cpp
+1612429379 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-5\img_processing_lib\src\img_processing_lib.cpp
 	"Img_Processing_Lib.h"
 	<stdio.h>
 	<stdlib.h>

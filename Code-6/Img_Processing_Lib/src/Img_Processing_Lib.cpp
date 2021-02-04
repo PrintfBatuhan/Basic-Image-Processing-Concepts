@@ -121,11 +121,12 @@ void Img_Processing_Lib::brightnessDOWN(unsigned char *_inputImageData,unsigned 
 void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int imgCols, float hist[], const char *histFile)
 {                                             //(imgInBuffer, imgHeight, imgWidth,imgHist)
     FILE *fptr;
-    fptr =fopen("image_hist.txt","w"); //open output as txt file. Write Pixels values on text file.
+    fptr =fopen(histFile,"w"); //open output as txt file. Write Pixels values on text file.
 
     int x,y,i,j;                 //some local variables
     long int ihist[255],sum;   //temporary histogram
-    for(i =0;i<=255;i++)      // just for initializing ihist index equal zero
+
+    for(i =0;i<=255;i++)      // initializing all intensity values to zero
     {
         ihist[i] =0;
     }
@@ -135,24 +136,26 @@ void Img_Processing_Lib::Histogram(unsigned char * _imgData, int imgRows, int im
     {
         for(x=0;x<imgCols;x++)
         {
-            j = *(_imgData+x+y*imgCols);
-            ihist[j] = ihist[j] +1;
+            j = *(_imgData+x+y*imgCols); // increment each value that we encounter in the array (pixels values)
+            ihist[j] = ihist[j] +1;      //each intensity goes to the appropriate histogram pane
             sum = sum+1;
         }
 
     }
 
     for(i=0;i<255;i++)
-        hist[i] = (float)ihist[i]/(float)sum;
+        hist[i] = (float)ihist[i]/(float)sum; //normalize
 
-    for(int i=0;i<255;i++)
+    for(int i=0;i<255;i++) //Scale the histogram
     {
         fprintf(fptr,"\n%f",hist[i]);
     }
     fclose(fptr);
 }
 
-void Img_Processing_Lib::EqualizeHistogram(unsigned char *_inptImgData, unsigned char *_outputImgData, int imgRows, int imgCols)
+
+/***************************************Equalize Function****************************************/
+void Img_Processing_Lib::EqualizeHistogram(unsigned char *_inputImgData, unsigned char *_outputImgData, int imgRows, int imgCols)
 {
     int x,y,i,j;
     int hist_eq[256];
@@ -163,9 +166,25 @@ void Img_Processing_Lib::EqualizeHistogram(unsigned char *_inptImgData, unsigned
 
     Histogram(&_inputImgData[0],imgRows,imgCols,&hist[0],initHist);
 
-    for(i=0;i++<=255;i++)
+    for(i=0;i<=255;i++)
+        {
+        sum =0.0;
+        for(j=0;j<=i;j++){
+            sum = sum+hist[j];
+        }
+        hist_eq[i] =  (int)(255*sum+0.5);
 
+    }
+    for(y =0;y<imgRows;y++)
+    {
+        for(x=0;x<imgCols;x++)
+        {
+            *(_outputImgData+x+y*imgCols) = hist_eq[*(_inputImgData+x+y*imgCols)];
+        }
+    }
+    Histogram(&_outputImgData[0], imgRows,imgCols,&hist[0],finalHist);
 }
+
 
 
 Img_Processing_Lib::~Img_Processing_Lib()

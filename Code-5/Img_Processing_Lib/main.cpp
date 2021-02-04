@@ -13,7 +13,7 @@ int main()
 
     const char imgName[] ="images/lena.bmp";
     const char newImgName[] ="images/blank.bmp";
-
+    const char Hist[]="hist.txt";
     Img_Processing_Lib *myImage  = new Img_Processing_Lib(imgName,
                                                           newImgName,
                                                           &imgHeight,
@@ -24,7 +24,7 @@ int main()
                                                           &imgInBuffer[0],
                                                           &imgOutBuffer[0]);
      myImage->readImage();
-     myImage->Histogram(imgInBuffer,imgHeight,imgWidth,imgHist);
+     myImage->Histogram(imgInBuffer,imgHeight,imgWidth,imgHist,Hist);
 
      cout<<"Success"<<endl;
      cout<<"Image Height : "<<imgHeight<<endl;

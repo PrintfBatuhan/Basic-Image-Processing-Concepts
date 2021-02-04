@@ -12,7 +12,7 @@ int main()
     unsigned char imgOutBuffer[_512by512_IMG_SIZE];
 
     const char imgName[] ="images/lena.bmp";
-    const char newImgName[] ="images/blank.bmp";
+    const char newImgName[] ="images/lena_equalize.bmp";
 
     Img_Processing_Lib *myImage  = new Img_Processing_Lib(imgName,
                                                           newImgName,
@@ -24,8 +24,8 @@ int main()
                                                           &imgInBuffer[0],
                                                           &imgOutBuffer[0]);
      myImage->readImage();
-     myImage->Histogram(imgInBuffer,imgHeight,imgWidth,imgHist, );
-
+     myImage->EqualizeHistogram(imgInBuffer,imgOutBuffer,imgHeight,imgWidth);
+     myImage->writeImage();
      cout<<"Success"<<endl;
      cout<<"Image Height : "<<imgHeight<<endl;
      cout<<"Image Width  : "<<imgWidth<<endl;

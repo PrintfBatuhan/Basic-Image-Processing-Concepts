@@ -41,9 +41,15 @@
 	<stdlib.h>
 	<iostream>
 
-1612406610 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-6\img_processing_lib\main.cpp
+1612419666 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-6\img_processing_lib\main.cpp
 	<iostream>
 	"Img_Processing_Lib.h"
 
-1612408370 c:\users\batuhan\desktop\dip\lessons\image processing\code-6\img_processing_lib\include\img_processing_lib.h
+1612421914 c:\users\batuhan\desktop\dip\lessons\image processing\code-6\img_processing_lib\include\img_processing_lib.h
+
+1612431218 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-6\img_processing_lib\src\img_processing_lib.cpp
+	"Img_Processing_Lib.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
 
