@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1612516698 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-9\image_blur_kernel\main.c
+	<stdio.h>
+	<stdlib.h>
+

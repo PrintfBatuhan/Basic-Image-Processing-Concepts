@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1612519640 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-10\sepia filter\main.c
+	<stdio.h>
+	<stdlib.h>
+
