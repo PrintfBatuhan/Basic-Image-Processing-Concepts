@@ -31,9 +31,9 @@
 - Code-H1:Edge Detection with Various Masks
 
 ### I-Filter Algorithms
-- Code-I1: Adding Salt and Pepper Noise to an Image
+- Code-I1: Adding Gaussian Noise and Salt and Pepper Noise to an Image
 
-- Code-I2: High-passSpatial Filtering
+- Code-I2: Filters
 
 - Code-I3: Gaussian Noise from an Image
 
