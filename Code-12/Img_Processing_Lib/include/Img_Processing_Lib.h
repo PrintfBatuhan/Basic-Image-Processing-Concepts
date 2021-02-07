@@ -19,6 +19,53 @@ int Cols;
 unsigned char *Data;
 };
 
+
+static const int LINE_DETECTOR_HORIZONAL_MSK[3][3]={{-1,2,-1},
+                                                    {-1,2,-1},
+                                                    {-1,2,-1}};
+
+static const int LINE_DETECTOR_VERTICAL_MSK[3][3] ={{-1,-1,-1},
+                                                    {2, 2, 2},
+                                                    {-1,-1,-1}};
+
+static const int LINE_DETECTOR_LDIA_MSK[3][3]     ={{2,-1,-1},
+                                                    {-1,2,-1},
+                                                    {-1,-1,2}};
+
+static const int LINE_DETECTOR_RDIA_MSK[3][3]     ={{-1,-1,2},
+                                                    {-1,2,-1},
+                                                    {2,-1,-1}};
+
+
+//Prewitt Mask Operatorr;
+static const int PREWITT_VERTICAL[]={-1,0,1,-1,0,1,-1,0,1};
+static const int PREWITT_HORIZONAL[]={-1,-1,-1,0,0,0,1,1,1};
+
+//Sobel Mask Operator;
+static const int SOBEL_VERTICAL[]={-1,0,1,-2,0,2,-1,0,1};
+static const int SOBEL_HORIZONAL[]={-1,-2,-1,0,0,0,1,2,1};
+
+//Robinson Mask Operator;
+static const int ROBINSON_NORTH[]={-1,0,1,-2,0,2,-1,0,1};
+static const int ROBINSON_SOUTH[]={1,0,-1,2,0,-2,1,0,-1};
+static const int ROBINSON_WEST[]={1,2,1,0,0,0,-1,-2,-1};
+static const int ROBINSON_EAST[]={-1,-2,-1,0,0,0,1,2,1};
+
+//Kirsch Mask Operator;
+static const int KIRSCH_NORTH[]={5,5,5,-3,0,-3,-3,-3,-3};
+static const int KIRSCH_SOUTH[]={-3,-3,-3,-3,0,-3,5,5,5};
+static const int KIRSCH_WEST[]={5,-3,-3,5,0,-3,5,-3,-3};
+static const int KIRSCH_EAST[]={-3,-3,5,-3,0,5,-3,-3,5};
+
+//Laplacian Operator;
+static const int LAPLACE_NEG[]={0,-1,0,-1,4,-1,0,-1,0};
+static const int LAPLACE_POZ[]={0,1,0,1,-4,1,0,1,0};
+
+//Roberts Mask Operator;
+static const int ROBERTS_GX []={1,0,0,-1};
+static const int ROBERTS_GY []={0,1,-1,0};
+
+
 class Img_Processing_Lib
 {
     public:
@@ -31,6 +78,7 @@ class Img_Processing_Lib
                                  unsigned char * _colorTable,
                                  unsigned char * _inBuffer,
                                  unsigned char * _outBuffer);
+        Mask myMask;
         void readImage();
         void writeImage();
         void copyImgData(unsigned char *_srcBuffer, unsigned char *_destBuffer, int bufferSize);
@@ -40,6 +88,8 @@ class Img_Processing_Lib
         void EqualizeHistogram(unsigned char *_inptImgData, unsigned char *_outputImgData, int imgRows, int imgCols);
         void ImageNegative(unsigned char *_InimgData, unsigned char*_outImgData, int imgWidth, int imgHeight);
         void Convolve2D(int imgRows,int Cols, struct Mask *myMask, unsigned char *inputBuffer, unsigned char *OutputBuffer);
+        void DetectLine(unsigned char *_inImgData, unsigned char *_outImgData,int imgCols, int imgRows, const int MASK[][3]);
+        void setMask(int MskRows, int MskCols, const int MskData[]);
 
         virtual ~Img_Processing_Lib();
 

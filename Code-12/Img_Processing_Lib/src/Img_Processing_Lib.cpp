@@ -226,6 +226,49 @@ unsigned char *tmp;
             }
 }
 
+/***************************************Line Detect with Line Detector Mask Function****************************************/
+void Img_Processing_Lib::DetectLine(unsigned char *_inImgData, unsigned char *_outImgData,int imgCols, int imgRows, const int MASK[][3])
+{
+    int x,y,i,j,sum;
+    for(y=1;y<=imgRows-1;y++)
+    {
+        for(x=1;x<=imgCols;x++)
+        {
+            sum=0;
+            for(i=-1;i<=1;i++)
+            {
+                for(j=-1;j<=1;j++)
+                {
+                    sum = sum + *(_inImgData+x+i+(long)(y+j)*imgCols)*MASK[i+1][j+1];
+                }
+            }
+            if(sum>255) sum=255;
+            if(sum<0)sum=0;
+            *(_outImgData+x+(long)y*imgCols)=sum;
+        }
+    }
+}
+
+/***************************************Line Detect with Another Masks Function****************************************/
+void Img_Processing_Lib::setMask(int MskRows, int MskCols, const int MskData[]){
+
+    signed char *tmp;
+    int requiredSize;
+
+    myMask.Rows = MskRows;
+    myMask.Cols = MskCols;
+    requiredSize = myMask.Rows * myMask.Cols;
+    myMask.Data= (unsigned char *)malloc(requiredSize);
+
+    tmp=(signed char*)myMask.Data;
+
+    for(int i=0;i<requiredSize;i++)
+    {
+        *tmp=MskData[i];
+        ++tmp;
+    }
+}
+
 Img_Processing_Lib::~Img_Processing_Lib()
 {
     //dtor

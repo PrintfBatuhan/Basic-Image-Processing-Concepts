@@ -4,20 +4,15 @@
 using namespace std;
 
 int main()
-{
-    Mask lpMask;
-    signed char *tmp;
-    int i;
-
-    float imgHist[NO_OF_GRAYLEVELS];
+{   float imgHist[NO_OF_GRAYLEVELS];
     int imgWidth, imgHeight, imgBitDepth;
     unsigned char imgHeader[BMP_HEADER_SIZE];
     unsigned char imgColorTable[BMP_COLOR_TABLE_SIZE];
     unsigned char imgInBuffer[_512by512_IMG_SIZE];
     unsigned char imgOutBuffer[_512by512_IMG_SIZE];
 
-    const char imgName[] ="images/barbara.bmp";
-    const char newImgName[] ="images/barbara_conv.bmp";
+    const char imgName[] ="imgRoberts/girlface.bmp";
+    const char newImgName[] ="imgRoberts/girlface_GY.bmp";
 
     Img_Processing_Lib *myImage  = new Img_Processing_Lib(imgName,
                                                           newImgName,
@@ -28,29 +23,31 @@ int main()
                                                           &imgColorTable[0],
                                                           &imgInBuffer[0],
                                                           &imgOutBuffer[0]);
-    lpMask.Rows=5;
-    lpMask.Cols=5;
-    lpMask.Data=(unsigned char *)malloc(25);
-
-    /*  -1 -1 -1 -1 -1
-        -1 -1 -1 -1 -1
-        -1 -1 24 -1 -1
-        -1 -1 -1 -1 -1
-        -1 -1 -1 -1 -1 */
-
-    //set all value to 24
-    tmp = (signed char *)lpMask.Data;
-    for(i=0;i<25;i++)
-    {
-        *tmp=-1;
-        ++tmp;
-    }
-    //set middle value to 24
-    tmp=(signed char *)lpMask.Data+13;
-    *tmp=24;
-
      myImage->readImage();
-     myImage->Convolve2D(imgHeight,imgWidth,&lpMask,imgInBuffer,imgOutBuffer);
+    //myImage->DetectLine(imgInBuffer,imgOutBuffer,imgWidth,imgHeight,LINE_DETECTOR_RDIA_MSK);
+
+    //myImage->setMask(3,3,PREWITT_VERTICAL);
+    //myImage->setMask(3,3,PREWITT_HORIZONAL);
+
+    //myImage->setMask(3,3,SOBEL_VERTICAL);
+    //myImage->setMask(3,3,SOBEL_HORIZONAL);
+
+    //myImage->setMask(3,3,ROBINSON_NORTH);
+    //myImage->setMask(3,3,ROBINSON_SOUTH);
+    //myImage->setMask(3,3,ROBINSON_WEST);
+    //myImage->setMask(3,3,ROBINSON_EAST);
+
+    //myImage->setMask(3,3,KIRSCH_NORTH);
+    //myImage->setMask(3,3,KIRSCH_SOUTH);
+    //myImage->setMask(3,3,KIRSCH_WEST);
+    //myImage->setMask(3,3,KIRSCH_EAST);
+
+    //myImage->setMask(3,3,LAPLACE_NEG);
+    //myImage->setMask(3,3,LAPLACE_POZ);
+
+    //myImage->setMask(2,2,ROBERTS_GX);
+      myImage->setMask(2,2,ROBERTS_GY);
+     myImage->Convolve2D(imgHeight,imgWidth,&myImage->myMask,imgInBuffer,imgOutBuffer);
      myImage->writeImage();
      cout<<"Success"<<endl;
      cout<<"Image Height : "<<imgHeight<<endl;

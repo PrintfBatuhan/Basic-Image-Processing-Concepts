@@ -80,3 +80,18 @@
 	<stdlib.h>
 	<iostream>
 
+1612611989 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-12\img_processing_lib\src\img_processing_lib.cpp
+	"Img_Processing_Lib.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
+1612617064 c:\users\batuhan\desktop\dip\lessons\image processing\code-12\img_processing_lib\include\img_processing_lib.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
+1612614967 source:c:\users\batuhan\desktop\dip\lessons\image processing\code-12\img_processing_lib\main.cpp
+	<iostream>
+	"Img_Processing_Lib.h"
+
