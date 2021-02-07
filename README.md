@@ -35,13 +35,5 @@
 
 - Code-I2: Filters
 
-- Code-I3: Gaussian Noise from an Image
-
-- Code-I5: Maximum Filter Algorithm
-
-- Code-I6: Developing the Median Filter Algorithm
-
-- Code-I7: Minimum Filter Algorithm
-
 
 
