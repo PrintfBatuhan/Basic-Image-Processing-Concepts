@@ -4,7 +4,7 @@
 int main()
 {
     FILE *InputImg=fopen("cameraman.bmp","rb");
-    FILE *OutputImg=fopen("cameraman_rotated.bmp","wb");
+    FILE *OutputImg=fopen("cameraman_rotated_ y-axis.bmp","wb");
 
     int selected;
 
@@ -42,17 +42,18 @@ int main()
     printf("Enter rotation direcrion:\n ");
     printf("1 :Rotate right\n ");
     printf("2 :Rotate left \n ");
-    printf("3 :Rotate 180 degree\n");
+    printf("3 :Rotate down\n ");
+    printf("4 :Turn on the y-axis \n ");
     scanf("%d",&selected);
 
     switch(selected)
     {
     case 1:
-        for(int i=0;i<width;i++)
+        for(int i=0;i<height;i++)
         {
-            for(int j=0;j<height;j++)
+            for(int j=0;j<width;j++)
             {
-                out_buffer[j][height-1-i]=in_buffer[i][j];
+                out_buffer[i][j]=in_buffer[j][width-i];
             }
         }
 //Let's say that (0,0) is the upper-left corner, and we are wanting to rotate left 90 degrees. Then the upper-left corner of the rotated image is equivalent to the upper-right corner of the original image, which is at (original_height-1,0).
@@ -62,21 +63,32 @@ int main()
         break;
 
     case 2:
-        for(int i=0;i<width;i++)
+        for(int i=0;i<height;i++)
         {
-            for(int j=0;j<height;j++)
+            for(int j=0;j<width;j++)
             {
-                out_buffer[j][i]=in_buffer[i][j];
+                out_buffer[i][j]=in_buffer[height-j][i];
             }
         }
         break;
 
     case 3:
-         for(int i=0;i<width;i++)
+         for(int i=0;i<height;i++)
         {
-            for(int j=0;j<height;j++)
+            for(int j=0;j<width;j++)
             {
-                out_buffer[width-i][j]=in_buffer[i][j];
+                out_buffer[i][j]=in_buffer[height-i][j];
+            }
+        }
+
+        break;
+
+    case 4:
+         for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<width;j++)
+            {
+                out_buffer[i][j]=in_buffer[i][width-j];
             }
         }
 

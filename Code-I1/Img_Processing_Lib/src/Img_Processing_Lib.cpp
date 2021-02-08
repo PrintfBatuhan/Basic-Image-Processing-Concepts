@@ -277,7 +277,7 @@ void Img_Processing_Lib::GaussNoise(unsigned char*_inImgData, int imgCols,int im
         for(x=0;x<imgCols;x++)
     {
         noise = sqrt(-2*var*log(1.0-(float)rand()/32767.1));
-        theta = (float)rand()*1.9175345e-4 - 3.14159265;
+        theta = (float)112*1.9175345e-4 - 3.14159265;
         noise = noise * cos(theta);
         noise=noise+mean;
         if(noise>255) noise=255;

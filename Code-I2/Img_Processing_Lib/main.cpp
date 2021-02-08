@@ -11,8 +11,8 @@ int main()
     unsigned char imgInBuffer[_512by512_IMG_SIZE];
     unsigned char imgOutBuffer[_512by512_IMG_SIZE];
 
-    const char imgName[] ="images/image_SAP_Noise.bmp";
-    const char newImgName[] ="images/image_Med_sap.bmp";
+    const char imgName[] ="images/barbara_Noise.bmp";
+    const char newImgName[] ="images/image_Medaaa.bmp";
 
     Img_Processing_Lib *myImage  = new Img_Processing_Lib(imgName,
                                                           newImgName,

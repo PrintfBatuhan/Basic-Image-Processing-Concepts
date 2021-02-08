@@ -3,8 +3,8 @@
 
 int main()
 {
-    FILE *Input=fopen("fruits.bmp","rb");
-    FILE *Output=fopen("fruits_blurring.bmp","wb");
+    FILE *Input=fopen("baboon.bmp","rb");
+    FILE *Output=fopen("baboon_blurring.bmp","wb");
 
     unsigned char imgHeader[54];
     unsigned char colorTable[1024];
