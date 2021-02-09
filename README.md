@@ -1,6 +1,6 @@
 # Image-Processing
 ### A-Basic Image Processing Concepts and Terminologies
-  The following codes covers the basics of image processing. A basic and complementary resource is provided for beginners to image processing.
+ / The following codes covers the basics of image processing. A basic and complementary resource is provided for beginners to image processing.
 - Code-A1:Opening and Copying an Image
 
 - Code-A2:Image Reader and Image Writer Function
