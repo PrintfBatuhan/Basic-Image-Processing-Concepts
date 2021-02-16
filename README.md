@@ -1,5 +1,15 @@
+<div align="center">
+
 # Image-Processing
+</div>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60669304/107406865-fdb84b00-6b19-11eb-8170-79c25e8d0012.PNG" alt="Sublime's custom image"/>
+</p>
+The following codes covers the basics of image processing. A basic and complementary resource is provided for beginners to image processing.<br />
+
 ### A-Basic Image Processing Concepts and Terminologies
+
 - Code-A1:Opening and Copying an Image
 
 - Code-A2:Image Reader and Image Writer Function
