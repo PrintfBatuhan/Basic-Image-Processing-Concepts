@@ -6,6 +6,10 @@
 
 - Code-A3:Creating the Image Processing Library
 
+- Code-A4:RGB Image to Grayscale Image
+
+- Code-A5: Binarization
+
 ### B-Arithmetic Operations
 - Code-B1:Image Brigthness and Darkness
 
